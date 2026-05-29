@@ -1201,126 +1201,38 @@ function HomePage({ setPage, toDetail }) {
         </div>
       </div>
 
-      {/* WHY US */}
-      <section className="section" style={{ background: "var(--white)" }}>
+      {/* WHY US — compact */}
+      <section style={{ background: "var(--white)", padding: "48px 0" }}>
         <div className="container">
-          <div
-            style={{
-              display: "flex",
-              alignItems: "flex-end",
-              justifyContent: "space-between",
-              gap: 24,
-              marginBottom: 40,
-              flexWrap: "wrap",
-            }}
-          >
-            <div className="fade-up">
-              <div className="eyebrow">Why CarConnect</div>
-              <div className="section-title">
-                Built for <em>Sellers.</em>
-              </div>
-            </div>
-            <p className="section-sub fade-up d1" style={{ margin: 0 }}>
-              Sri Lanka's most seller-friendly automotive platform — combining
-              technology, expertise, and an active buyer network.
-            </p>
+          <div style={{ textAlign: "center", marginBottom: 28 }} className="fade-up">
+            <div className="eyebrow" style={{ justifyContent: "center" }}>Why CarConnect</div>
+            <div className="section-title">Built for <em>Sellers.</em></div>
           </div>
-          <div className="features-grid">
+          <div className="sell-mini-grid fade-up d1">
             {[
-              {
-                n: "01",
-                h: "Sell in 7 Days",
-                p: "Our active buyer network gets your vehicle in front of serious buyers instantly. No more waiting months.",
-              },
-              {
-                n: "02",
-                h: "Best Market Valuation",
-                p: "Professional valuation ensures you never undersell. We negotiate hard on your behalf.",
-              },
-              {
-                n: "03",
-                h: "Zero Risk",
-                p: "We handle all legal documentation and ensure payment is secured before ownership transfers.",
-              },
-              {
-                n: "04",
-                h: "5,000+ Verified Buyers",
-                p: "Instant access to our database of pre-qualified, serious buyers actively looking right now.",
-              },
-              {
-                n: "05",
-                h: "Multi-Platform Reach",
-                p: "Your vehicle features across CarConnect.lk, social media, and our buyer network simultaneously.",
-              },
-              {
-                n: "06",
-                h: "100% Free to List",
-                p: "No upfront costs, no listing fees. We only earn when you sell — so we're fully motivated.",
-              },
+              { n: "01", h: "Sell in 7 Days", p: "Active buyer network. No waiting months." },
+              { n: "02", h: "Best Price", p: "Expert valuation. We negotiate for you." },
+              { n: "03", h: "Zero Risk", p: "All paperwork handled. Payment secured first." },
+              { n: "04", h: "5,000+ Buyers", p: "Pre-qualified, serious buyers ready now." },
             ].map((f, i) => (
-              <div key={i} className={`feature-card fade-up d${(i % 3) + 1}`}>
-                <div className="feature-num">{f.n}</div>
-                <h3>{f.h}</h3>
+              <div key={i} className="sell-mini-card">
+                <div className="sell-mini-num">{f.n}</div>
+                <strong>{f.h}</strong>
                 <p>{f.p}</p>
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* PROCESS */}
-      <section className="process-section">
-        <div className="container">
-          <div className="process-header fade-up">
-            <div className="eyebrow">How It Works</div>
-            <div className="section-title" style={{ color: "#fff" }}>
-              Three Steps. <em>Done.</em>
-            </div>
-            <p className="section-sub" style={{ margin: "0 auto" }}>
-              From listing to payment — we've streamlined every step.
-            </p>
-          </div>
-          <div className="steps-grid">
-            {[
-              {
-                n: "01",
-                h: "Submit Your Vehicle",
-                p: "Fill our quick form with your details. Takes 60 seconds — completely free.",
-              },
-              {
-                n: "02",
-                h: "We Inspect & Value It",
-                p: "Our expert team visits you, inspects, and gives you a fair market valuation.",
-              },
-              {
-                n: "03",
-                h: "Get Paid Fast",
-                p: "We connect you with the right buyer, handle all paperwork, and ensure safe payment.",
-              },
-            ].map((s, i) => (
-              <div key={i} className={`step-card fade-up d${i + 1}`}>
-                <div className="step-n">{s.n}</div>
-                <h3>{s.h}</h3>
-                <p>{s.p}</p>
-              </div>
-            ))}
-          </div>
-          <div className="process-cta fade-up">
-            <a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                setPage("sell");
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }}
-              className="btn btn-primary btn-lg"
-            >
-              Start Selling — It's Free <I.Arr />
+          <div style={{ display: "flex", justifyContent: "center", gap: 12, marginTop: 28, flexWrap: "wrap" }} className="fade-up d2">
+            <a href="#" onClick={(e) => { e.preventDefault(); setPage("sell"); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="btn btn-primary">
+              Sell for Free <I.Arr />
+            </a>
+            <a href="#" onClick={(e) => { e.preventDefault(); setPage("inventory"); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="btn btn-outline">
+              Browse Cars <I.Arr />
             </a>
           </div>
         </div>
       </section>
-
+      
       {/* STATS */}
       <section className="stats-section">
         <div className="container">
@@ -1746,6 +1658,7 @@ function DetailPage({ vehicle, setPage, toDetail }) {
     setSent(false);
     setName("");
     setPhone("");
+    window.scrollTo(0, 0);   // ← ADD THIS LINE
   }, [vehicle]);
   if (!vehicle) return null;
 
@@ -1998,7 +1911,7 @@ function Footer({ setPage }) {
         <div className="footer-grid">
           <div>
             <div className="footer-brand">
-              Car<span>Connect</span>.lk
+              <img src="./Images/logo.png" style="width: 50%"></img>
             </div>
             <p>
               Sri Lanka's premium automotive marketplace — connecting serious
