@@ -2395,7 +2395,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        transition: opacity 8s ease, visibility 1s ease;
+        transition: opacity 8s ease, visibility 8s ease;
       }
       #loader.hidden {
         opacity: 0;
@@ -2424,7 +2424,7 @@
         border: 2px solid transparent;
         border-top-color: #e8000d;
         border-right-color: rgba(232,0,13,0.25);
-        animation: spinCW 1.4s linear infinite;
+        animation: spinCW 2.4s linear infinite;
       }
       /* Middle pulsing ring */
       .loader-ring-mid {
@@ -2432,7 +2432,7 @@
         inset: 16px;
         border-radius: 50%;
         border: 1.5px solid rgba(232,0,13,0.18);
-        animation: loaderPulseRing 2.2s ease-in-out infinite;
+        animation: loaderPulseRing 3.2s ease-in-out infinite;
       }
       /* Inner counter-spin ring */
       .loader-ring-inner {
@@ -2442,7 +2442,7 @@
         border: 1px solid transparent;
         border-bottom-color: rgba(232,0,13,0.55);
         border-left-color: rgba(232,0,13,0.2);
-        animation: spinCCW 2s linear infinite;
+        animation: spinCCW 3s linear infinite;
       }
       /* Tick marks ring */
       .loader-ring-ticks {
